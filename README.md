@@ -1,2 +1,1 @@
-# xueyizhan.github.io
-# IS 445 Data Visualization
+## IS 445 Data Visualization
