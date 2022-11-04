@@ -21,12 +21,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Projects">
-  <meta property="og:description" content="This is the website of XYZ IS4445">
-  <meta property="og:image" content="https://dogtime.com/assets/uploads/gallery/pembroke-welsh-corgi-dog-breed-pictures/prance-8.jpg">
+  <meta property="og:title" content="HW10">
+  <meta property="og:description" content="This is hw10">
+  <meta property="og:image" content="assets/pngs/hw10.png">
 
-  <title>Projects</title>
-  <meta name="description" content="This is the website of XYZ IS4445">
+  <title>HW10</title>
+  <meta name="description" content="This is hw10">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -72,39 +72,45 @@
   </div>
 
 </nav>
-    <div class="card-columns m-3 mt-5">
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="hw10">HW10</h1>
 
-  <!-- Local Projects -->
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/projects/1-vega-lite-project" class="project card text-themed"><img id="vega-lite-example-project-img" class="card-img-top" src="/assets/pngs/cars.png" alt="Vega Lite Example Project" /><div class="card-body">
-      <h5 id="vega-lite-example-project-name" class="card-title">Vega Lite Example Project
-      </h5>
-      <p id="vega-lite-example-project-desc" class="card-text">This is a "showcase" project that uses vega-lite for interactive viz!</p>
-      <p id="vega-lite-example-project-tools" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Python</span><span class="badge badge-pill text-primary border border-primary ml-1">HTML</span><span class="badge badge-pill text-primary border border-primary ml-1">vega-lite</span></p>
-    </div>
-  </a>
+<h2 id="plot1">Plot1</h2>
+
+<p>The first plot records the average total floors each agency builds for its buildings.</p>
+
+<p>Data are presented as a bar group by each agency. The x-axis records each agency name, which is nominal data. The y-axis records the average total floors built by each agency, which is quantitative data. Two colors, blue and red are used in the plot representing two kinds of average data. The blue color, scaled from light to dark, represents the count of records: dark blue bars mean agency with many buildings records, while the light blue bars mean agency with few buildings records. The red line in the plot represents the selected agency buildings’ average total floors.</p>
+
+<p>There are no null values in the needed variables, so we don’t need to deal with them. The dataset has over 8,000 records, but Altair’s default volume is 5,000, so we need to use data_transformers.enable function to change the default value from 5,000 to 20,000.</p>
+
+<p>Similar to homework 9, I choose bar plot for visualizing two same variables, using the same aggregation method. But innovatively, I add a color bar on the plot’s right side, indicating the count of building records for each agency, and I also add an interactivity on the plot, giving the audience an opportunity to choose the targeted agency they want to investigate. As the mouse slides over the agencies’ bars, the plot only highlights the selected agencies, and the red line value varies as the selected agencies range varies.</p>
+
+<p>The plot is shown below :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">vegachart</span> <span class="nx">schema</span><span class="o">-</span><span class="nx">url</span><span class="o">=</span><span class="dl">"</span><span class="s2">/assets/json/hw10_char1.json</span><span class="dl">"</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">width: 100%</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/vegachart</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<vegachart schema-url="/assets/json/hw10_char1.json" style="width: 100%"></vegachart>
+
+<h2 id="plot2">Plot2</h2>
+
+<p>The second visualization is consisted of two plots: the main plot records the number of constructions built in each year, the subplot on the right side records the average number of constructions built every year given the selected time range.</p>
+
+<p>The main plot is a line chart, so that the audience can compare the trend of each year’s change. The x-axis records years constructed, which is temporal data. The y-axis records total building numbers, which is quantitative data. The line in the main plot is colored blue, the horizontal line in the subplot is colored red.</p>
+
+<p>At the data preprocessing part, column Years Constructed is checked with no null values, so I can skip null data process. But the data ranges from 0 to 2019, which is an outlier, so I just narrow the time scale to 1800 and 2020. The building constructed number is calculated via using a count() function after grouping by data under years constructed in defining plot process.</p>
+
+<p>The only similarity with homework 9 is the selected visualization type. But in homework 9, I used line chart for visualizing average square foot each agency builds for their constructions, but this plot I use line chart for recording the number of buildings each year builds. And additionally, I add an interactivity on the plot, that the audience can use mouse sliding or zoom in/out the investigated agency range.</p>
+
+<p>The plot is shown below :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="nx">vegachart</span> <span class="nx">schema</span><span class="o">-</span><span class="nx">url</span><span class="o">=</span><span class="dl">"</span><span class="s2">/assets/json/hw10_chart2.json</span><span class="dl">"</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">width: 100%</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/vegachart</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<vegachart schema-url="/assets/json/hw10_chart2.json" style="width: 100%"></vegachart>
+
+
 </div>
-
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/projects/hw10" class="project card text-themed"><img id="hw10-img" class="card-img-top" src="/assets/pngs/hw10.png" alt="HW10" /><div class="card-body">
-      <h5 id="hw10-name" class="card-title">HW10
-      </h5>
-      <p id="hw10-desc" class="card-text">This is hw10</p>
-      <p id="hw10-tools" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Python</span><span class="badge badge-pill text-primary border border-primary ml-1">HTML</span><span class="badge badge-pill text-primary border border-primary ml-1">vega-lite</span></p>
-    </div>
-  </a>
-</div>
-
-  
-
-
-
-
-  <!-- Remote Projects -->
-  
-</div>
-
-
   </main>
   <footer class="mt-auto py-3 text-center">
 
@@ -171,6 +177,17 @@
 
 </footer>
 
+
+<!-- Custom page specific js files -->
+  
+    <script src='/assets/js/vega.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-lite.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-embed.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/justcharts.js' type="text/javascript"></script>
+  
 
 
 
